@@ -84,9 +84,9 @@ if(currentNum == answer[i])
 
 {
 
-console.log("firmy \(" + currentNum + "\)")
+console.log("firmi \(" + currentNum + "\)")
 
-corrections.unshift("firmy")
+corrections.unshift("firmi")
 
 a = 10
 
@@ -116,6 +116,22 @@ console.log("bagel \(" + currentNum + "\)")
 
 }
 
+}
+
+for(i=0; i <= NoOfNo - 1; i++)
+{
+if(corrections[i] == "firmi")
+{
+if(i == NoOfNo - 1)
+{
+	console.log("winner")
+	var img = document.createElement("img");
+	img.src = "YouWin.jpg";
+
+	var imgPlace = document.getElementById("michael");
+	imgPlace.appendChild(img)
+}
+}
 }
 
 corrections.pop()
