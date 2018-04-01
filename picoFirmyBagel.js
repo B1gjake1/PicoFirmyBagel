@@ -1,4 +1,4 @@
-//*generating number
+//generating number
 
 var NoOfNo = prompt("how many numbers would you like to use \n (1-9)");
 
@@ -70,13 +70,13 @@ Panswer = document.getElementById('Panswer').value
 
 console.log(Panswer)
 
-for(i=0; i < NoOfNo; i++) {
+for(i=0; i <= NoOfNo - 1; i++) {
 
 var currentNum = Panswer[i]
 
 console.log("doing first loop")
 
-for(a=0; a < NoOfNo - 1; a++) {
+for(a=0; a <= NoOfNo - 1; a++) {
 
 console.log("doing second loop")
 
@@ -92,7 +92,7 @@ a = 10
 
 }
 
-else if(currentNum === answer[a])
+else if(currentNum == answer[a])
 
 {
 
@@ -123,8 +123,6 @@ console.log("bagel \(" + currentNum + "\)")
 corrections.pop()
 
 corrections = corrections.sort()
-
-console.log("am end")
 
 alert(corrections)
 
