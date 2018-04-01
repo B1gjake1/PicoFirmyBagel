@@ -54,7 +54,7 @@ console.log(number)
 
 var answer = generator()
 
-alert(answer)
+//alert(answer)
 
 
 
