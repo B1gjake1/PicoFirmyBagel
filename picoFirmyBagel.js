@@ -1,52 +1,52 @@
-//*generating number
+//generating number
 
 var NoOfNo = prompt("how many numbers would you like to use \n (1-9)");
 
 var getNumber = function() {
 
-var num = (Math.floor(Math.random()*10))
+	var num = (Math.floor(Math.random()*10));
 
-return num;
+	return num;
 
 }
 
 var generator = function(){
 
-var numbers = []
+	var numbers = []
 
-  for(a=0;a < NoOfNo; a++) {
+  	for(a=0;a < NoOfNo; a++) {
 
-  var number = getNumber()
+  		var number = getNumber()
 
-	for(i=0; i < numbers.length + 1; i++) {
+		for(i=0; i < numbers.length + 1; i++) {
 
-		if(number === numbers[i]) {
+			if(number === numbers[i]) {
 
-        number = getNumber()
+        	number = getNumber()
 
-		   i = -1
+			i = -1
 
 			}
 
-		else {
+			else {
 
-		  if(i === numbers.length) {
+		  		if(i === numbers.length) {
 
-				numbers[a] = number
+					numbers[a] = number
 
-            i = 10
+            		i = 10
 
-console.log(number)
+					console.log(number)
 
-}
+				}
+
+			}
 
 		}
 
 	}
 
-	}
-
-   numbers = numbers.join("")
+	numbers = numbers.join("")
 
 	return numbers
 
@@ -64,69 +64,58 @@ alert(answer)
 
 var check = function() {
 
-var corrections = ["starting"]
+	var corrections = ["starting"]
 
-Panswer = document.getElementById('Panswer').value
+	Panswer = document.getElementById('Panswer').value
 
-console.log(Panswer)
+	console.log(Panswer)
 
-for(i=0; i < NoOfNo; i++) {
+	for(i=0; i <= NoOfNo - 1; i++) {
 
-var currentNum = Panswer[i]
+		var currentNum = Panswer[i]
 
-console.log("doing first loop")
+		console.log("doing first loop")
 
-for(a=0; a < NoOfNo - 1; a++) {
+		for(a=0; a <= NoOfNo - 1; a++) {
 
-console.log("doing second loop")
+			console.log("doing second loop")
 
-if(currentNum == answer[i])
+			if(currentNum == answer[i]){
+			
 
-{
+			console.log("firmy \(" + currentNum + "\)")
 
-console.log("firmy \(" + currentNum + "\)")
+			corrections.unshift("firmy")
 
-corrections.unshift("firmy")
+			a = 10
 
-a = 10
+			}
 
+			else if(currentNum == answer[a]){
+
+				console.log("pico\(" + currentNum + "\)")
+
+				corrections.unshift("pico")
+
+				a = 10
+
+			}
+
+			else if(a == NoOfNo - 1){
+
+				corrections.unshift("bagel")
+
+				alert("bagel")
+
+				console.log("bagel \(" + currentNum + "\)")
+
+			}
+
+		}
+
+	}
+
+	corrections.pop();
+	corrections = corrections.sort();
+	alert(corrections);
 }
-
-else if(currentNum === answer[a])
-
-{
-
-console.log("pico\(" + currentNum + "\)")
-
-corrections.unshift("pico")
-
-a = 10
-
-}
-
-else if(a == NoOfNo - 1)
-
-{
-
-corrections.unshift("bagel")
-
-alert("bagel")
-
-console.log("bagel \(" + currentNum + "\)")
-
-}
-
-}
-
-}
-
-corrections.pop()
-
-corrections = corrections.sort()
-
-console.log("am end")
-
-alert(corrections)
-
-}
-
