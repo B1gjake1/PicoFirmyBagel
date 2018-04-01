@@ -1,5 +1,7 @@
 //generating number
 
+var win = document.getElementById("winner");
+
 var NoOfNo = prompt("how many numbers would you like to use \n (1-9)");
 
 var getNumber = function() {
@@ -84,9 +86,9 @@ if(currentNum == answer[i])
 
 {
 
-console.log("firmy \(" + currentNum + "\)")
+console.log("firmi \(" + currentNum + "\)")
 
-corrections.unshift("firmy")
+corrections.unshift("firmi")
 
 a = 10
 
@@ -122,6 +124,21 @@ corrections.pop()
 
 corrections = corrections.sort()
 
+for(i=0; i <= NoOfNo - 1; i++)
+{
+if(corrections[i] == "firmi")
+{
+if(i == NoOfNo - 1)
+{
+	console.log("winner")
+	var img = document.createElement("img");
+	img.src = "YouWin.jpg";
+
+	var imgPlace = document.getElementById("michael");
+	imgPlace.appendChild(img)
+}
+}
+}
 alert(corrections)
 
 }
