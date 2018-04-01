@@ -1,4 +1,5 @@
 html {width: 100%; height:100%;}
 body {width:100%; height:100%;text-align:center;}
-#Panswer {width:30%; height:20%; border-radius:20px;}
+#Panswer {width:30%; height:20%; border-radius:20px;font-size:60px;text-align:center;}
 button {width:20%; height:10%; border-radius:20px;}
+#jeff {bottom:20px;}
