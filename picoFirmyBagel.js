@@ -101,6 +101,8 @@ var check = function() {
 				console.log("bagel \(" + currentNum + "\)");
 
 			}
+		}
+	}
 
 
 for(i=0; i <= NoOfNo - 1; i++)
