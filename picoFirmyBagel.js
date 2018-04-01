@@ -102,7 +102,24 @@ var check = function() {
 
 			}
 
-		}
+
+for(i=0; i <= NoOfNo - 1; i++)
+{
+if(corrections[i] == "firmi")
+{
+if(i == NoOfNo - 1)
+{
+	console.log("winner")
+	var img = document.createElement("img");
+	img.src = "YouWin.jpg";
+
+	var imgPlace = document.getElementById("michael");
+	imgPlace.appendChild(img)
+}
+}
+}
+alert(corrections)
+
 
 	}
 
