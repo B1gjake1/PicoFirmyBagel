@@ -110,8 +110,6 @@ else if(a == NoOfNo - 1)
 
 corrections.unshift("bagel")
 
-alert("bagel")
-
 console.log("bagel \(" + currentNum + "\)")
 
 }
