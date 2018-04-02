@@ -1,20 +1,26 @@
+
+
 var getAnswer = function() {
-//    var answer = 0
-    var answer = getElementById('answer').innerHTML;
+    var answer = 0
+    var answer = document.getElementById("Panswer").value;
+    document.getElementById("Panswer").value=null;
     return answer
 }
 
-var answer = getAnswer()
+var answer = null
 
 //alert(answer)
-
-
 
 //getting player answer
 
 
+var AnswerOrCheck = function()
+{
+var tester = document.getElementById("tester");
+if(tester.innerHTML == "check")
+{
 
-var check = function() {
+    var NoOfNo = answer.length;
 
 var corrections = ["starting"]
 
@@ -84,6 +90,10 @@ if(i == NoOfNo - 1)
 	imgPlace.appendChild(img)
 }
 }
+else
+{
+    break;
+}
 }
 
 corrections.pop()
@@ -92,4 +102,18 @@ corrections = corrections.sort()
 
 alert(corrections)
 
+}
+else
+{
+    answer = getAnswer();
+
+    if(answer.length > 9)
+    {
+        alert("use a number with less than 10 digits")
+    }
+    else
+    {
+        tester.innerHTML = "check";
+    }
+}
 }
