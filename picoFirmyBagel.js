@@ -2,51 +2,53 @@
 
 var NoOfNo = prompt("how many numbers would you like to use \n (1-9)");
 
-var getNumber = function() {
-
-var num = (Math.floor(Math.random()*10))
-
-return num;
-
+var getNumber = function() 
+{
+	return Math.floor(Math.random()*10);
 }
 
-var generator = function(){
+var generator = function()
+{
 
-var numbers = []
+	var numbers = []
 
-  for(a=0;a < NoOfNo; a++) {
+	for(a=0;a < NoOfNo; a++) 
+	{
+  		var number = getNumber()
 
-  var number = getNumber()
+		for(i=0; i < numbers.length + 1; i++) 
+		{
 
-	for(i=0; i < numbers.length + 1; i++) {
+			if(number === numbers[i]) 
+			{
 
-		if(number === numbers[i]) {
+        	number = getNumber()
 
-        number = getNumber()
-
-		   i = -1
+			i = -1
 
 			}
 
-		else {
+			else 
+			{
 
-		  if(i === numbers.length) {
+				if(i === numbers.length) 
+				{
 
 				numbers[a] = number
 
-            i = 10
+            	i = 10
 
-console.log(number)
+				console.log(number)
 
-}
+				}
+
+			}
 
 		}
 
 	}
 
-	}
-
-   numbers = numbers.join("")
+	numbers = numbers.join("")
 
 	return numbers
 
@@ -62,87 +64,86 @@ var answer = generator()
 
 
 
-var check = function() {
-
-var corrections = ["starting"]
-
-Panswer = document.getElementById('Panswer').value
-
-console.log(Panswer)
-
-for(i=0; i <= NoOfNo - 1; i++) {
-
-var currentNum = Panswer[i]
-
-console.log("doing first loop")
-
-for(a=0; a <= NoOfNo - 1; a++) {
-
-console.log("doing second loop")
-
-if(currentNum == answer[i])
-
+var check = function() 
 {
 
-console.log("firmi \(" + currentNum + "\)")
+	var corrections = ["starting"]
 
-corrections.unshift("firmi")
+	Panswer = document.getElementById('Panswer').value
 
-a = 10
+	console.log(Panswer)
 
-}
+	for(i=0; i <= NoOfNo - 1; i++) 
+	{
 
-else if(currentNum == answer[a])
+		var currentNum = Panswer[i]
 
-{
+		console.log("doing first loop")
 
-console.log("pico\(" + currentNum + "\)")
+		for(a=0; a <= NoOfNo - 1; a++) 
+		{
 
-corrections.unshift("pico")
+			console.log("doing second loop")
 
-a = 10
+			if(currentNum == answer[i])
+			{
 
-}
+				console.log("firmi \(" + currentNum + "\)")
 
-else if(a == NoOfNo - 1)
+				corrections.unshift("firmi")
 
-{
+				a = 10
 
-corrections.unshift("bagel")
+			}
 
-console.log("bagel \(" + currentNum + "\)")
+			else if(currentNum == answer[a])
+			{
 
-}
+				console.log("pico\(" + currentNum + "\)")
 
-}
+				corrections.unshift("pico")
 
-}
+				a = 10
 
-for(i=0; i <= NoOfNo - 1; i++)
-{
-if(corrections[i] == "firmi")
-{
-if(i == NoOfNo - 1)
-{
-	console.log("winner")
-	var img = document.createElement("img");
-	img.src = "YouWin.jpg";
+			}
 
-	var imgPlace = document.getElementById("michael");
-	imgPlace.appendChild(img)
-}
-}
-else
-{
-	break;
-}
-}
+			else if(a == NoOfNo - 1)
+			{
 
-corrections.pop()
+				corrections.unshift("bagel")
 
-corrections = corrections.sort()
+				console.log("bagel \(" + currentNum + "\)")
 
-alert(corrections)
+			}
 
+		}
+
+	}
+
+	for(i=0; i <= NoOfNo - 1; i++)
+	{
+		if(corrections[i] == "firmi")
+		{
+			if(i == NoOfNo - 1)
+			{
+				console.log("winner");
+
+				var img = document.createElement("img");
+				img.src = "YouWin.jpg";
+
+				var imgPlace = document.getElementById("michael");
+				imgPlace.appendChild(img);
+			}
+		}
+		else
+		{
+			break;
+		}
+	}
+
+	corrections.pop()
+	corrections = corrections.sort()
+	alert(corrections)
+	
 }
 
