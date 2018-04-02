@@ -24,6 +24,8 @@ var AnswerOrCheck = function()
 
         var corrections = ["starting"]
 
+        var written = ["starting"]
+
         Panswer = document.getElementById('Panswer').value
 
         console.log(Panswer)
@@ -45,6 +47,8 @@ var AnswerOrCheck = function()
 
                 corrections.unshift("firmi")
 
+                written.unshift("F")
+
                 a = 10
 
             }
@@ -56,6 +60,8 @@ var AnswerOrCheck = function()
 
                 corrections.unshift("pico")
 
+                written.unshift("P")
+
                 a = 10
 
             }
@@ -64,6 +70,8 @@ var AnswerOrCheck = function()
             {
 
                 corrections.unshift("bagel")
+
+                written.unshift("B")
 
                 console.log("bagel \(" + currentNum + "\)")
 
@@ -96,6 +104,18 @@ var AnswerOrCheck = function()
     }
 
     corrections.pop()
+
+    written.pop()
+
+    var p = document.getElementById("write");
+
+    written = written.sort();
+
+    written = written.toString();
+
+    written = written.replace(/,/g, "");
+
+    p.innerHTML += "<br>" + Panswer + " " + written;
 
     corrections = corrections.sort()
 
