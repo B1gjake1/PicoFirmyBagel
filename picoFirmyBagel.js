@@ -132,6 +132,10 @@ if(i == NoOfNo - 1)
 	imgPlace.appendChild(img)
 }
 }
+else
+{
+	break;
+}
 }
 
 corrections.pop()
