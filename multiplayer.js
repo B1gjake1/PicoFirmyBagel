@@ -1,68 +1,26 @@
-//generating number
 
-var NoOfNo = prompt("how many numbers would you like to use \n (1-9)");
 
-var getNumber = function() {
-
-var num = (Math.floor(Math.random()*10))
-
-return num;
-
+var getAnswer = function() {
+    var answer = 0
+    var answer = document.getElementById("Panswer").value;
+    document.getElementById("Panswer").value=null;
+    return answer
 }
 
-var generator = function(){
-
-var numbers = []
-
-  for(a=0;a < NoOfNo; a++) {
-
-  var number = getNumber()
-
-	for(i=0; i < numbers.length + 1; i++) {
-
-		if(number === numbers[i]) {
-
-        number = getNumber()
-
-		   i = -1
-
-			}
-
-		else {
-
-		  if(i === numbers.length) {
-
-				numbers[a] = number
-
-            i = 10
-
-console.log(number)
-
-}
-
-		}
-
-	}
-
-	}
-
-   numbers = numbers.join("")
-
-	return numbers
-
-}
-
-var answer = generator()
+var answer = null
 
 //alert(answer)
-
-
 
 //getting player answer
 
 
+var AnswerOrCheck = function()
+{
+var tester = document.getElementById("tester");
+if(tester.innerHTML == "check")
+{
 
-var check = function() {
+    var NoOfNo = answer.length;
 
 var corrections = ["starting"]
 
@@ -134,7 +92,7 @@ if(i == NoOfNo - 1)
 }
 else
 {
-	break;
+    break;
 }
 }
 
@@ -145,4 +103,17 @@ corrections = corrections.sort()
 alert(corrections)
 
 }
+else
+{
+    answer = getAnswer();
 
+    if(answer.length > 9)
+    {
+        alert("use a number with less than 10 digits")
+    }
+    else
+    {
+        tester.innerHTML = "check";
+    }
+}
+}
