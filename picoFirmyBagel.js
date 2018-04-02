@@ -58,8 +58,6 @@ var answer = generator()
 
 //alert(answer)
 
-
-
 //getting player answer
 
 
@@ -67,52 +65,60 @@ var answer = generator()
 var check = function() 
 {
 
-	var corrections = ["starting"]
+	var corrections = ["starting"];
 
-	Panswer = document.getElementById('Panswer').value
+	var written = ["starting"];
 
-	console.log(Panswer)
+	Panswer = document.getElementById('Panswer').value;
+
+	console.log(Panswer);
 
 	for(i=0; i <= NoOfNo - 1; i++) 
 	{
 
-		var currentNum = Panswer[i]
+		var currentNum = Panswer[i];
 
-		console.log("doing first loop")
+		console.log("doing first loop");
 
 		for(a=0; a <= NoOfNo - 1; a++) 
 		{
 
-			console.log("doing second loop")
+			console.log("doing second loop");
 
 			if(currentNum == answer[i])
 			{
 
-				console.log("firmi \(" + currentNum + "\)")
+				console.log("firmi \(" + currentNum + "\)");
 
-				corrections.unshift("firmi")
+				corrections.unshift("firmi");
 
-				a = 10
+				written.unshift("F");
+
+				a = 10;
 
 			}
 
 			else if(currentNum == answer[a])
 			{
 
-				console.log("pico\(" + currentNum + "\)")
+				console.log("pico\(" + currentNum + "\)");
 
-				corrections.unshift("pico")
+				corrections.unshift("pico");
 
-				a = 10
+				written.unshift("P");
+
+				a = 10;
 
 			}
 
 			else if(a == NoOfNo - 1)
 			{
 
-				corrections.unshift("bagel")
+				corrections.unshift("bagel");
 
-				console.log("bagel \(" + currentNum + "\)")
+				written.unshift("B");
+
+				console.log("bagel \(" + currentNum + "\)");
 
 			}
 
@@ -142,6 +148,12 @@ var check = function()
 	}
 
 	corrections.pop()
+	written.pop()
+	var p = document.getElementById("write")
+	written = written.sort();
+	written = written.toString();
+	written = written.replace(/,/g, "");
+	p.innerHTML += "<br>" + Panswer + " " + written;
 	corrections = corrections.sort()
 	alert(corrections)
 	
