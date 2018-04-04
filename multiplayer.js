@@ -136,3 +136,72 @@ var AnswerOrCheck = function()
         }
     }
 }
+
+/* take parameter use array to find which one, if else statement to find if set to 2, if set to 2 cycle to 0, else, add 1, if else statement to figure out what change*/
+
+
+
+var cycles = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+var cycle = function(num)
+
+{
+
+	var numBeingCycled = 						   document.getElementById(num);
+
+	if(cycles[num] < 3) 
+
+	{
+
+		cycles[num] = cycles[num] + 1;
+
+	}
+
+	else
+
+	{
+
+		cycles[num] = 0
+
+	};
+
+	
+
+	if(cycles[num] == 0)
+
+	{
+
+		var newNum = num
+
+	}
+
+	else if(cycles[num] == 1)
+
+	{
+
+		var newNum = num + " " + "X";
+
+	}
+
+	else if(cycles[num] == 2)
+
+	{
+
+		var newNum = num + " " + "O";
+
+	}
+
+	else if(cycles[num] == 3)
+    {
+        var newNum = num + " " + "?"
+    }
+    else
+	{
+
+		alert("error\(cycle not 0-3\)");
+
+	}
+
+		document.getElementById(num).innerHTML=newNum;
+
+	}
