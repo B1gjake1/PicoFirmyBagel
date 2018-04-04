@@ -159,3 +159,67 @@ var check = function()
 	
 }
 
+var cycles = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+var cycle = function(num)
+
+{
+
+	var numBeingCycled = 						   document.getElementById(num);
+
+	if(cycles[num] < 3) 
+
+	{
+
+		cycles[num] = cycles[num] + 1;
+
+	}
+
+	else
+
+	{
+
+		cycles[num] = 0
+
+	};
+
+	
+
+	if(cycles[num] == 0)
+
+	{
+
+		var newNum = num
+
+	}
+
+	else if(cycles[num] == 1)
+
+	{
+
+		var newNum = num + " " + "X";
+
+	}
+
+	else if(cycles[num] == 2)
+
+	{
+
+		var newNum = num + " " + "O";
+
+	}
+
+	else if(cycles[num] == 3)
+    {
+        var newNum = num + " " + "?"
+    }
+    else
+	{
+
+		alert("error\(cycle not 0-3\)");
+
+	}
+
+		document.getElementById(num).innerHTML=newNum;
+
+	}

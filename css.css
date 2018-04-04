@@ -1,5 +1,16 @@
 html {width: 100%; height:100%;}
 body {width:100%; height:100%;text-align:center;}
 #Panswer {width:30%; height:20%; border-radius:20px;font-size:60px;text-align:center;}
-button {width:20%; height:10%; border-radius:20px;}
-#write {font-size:20px;}
+button {width:20%; height:10%; border-radius:20px;text-align:center;}
+#write {font-size:20px;width:30%;}
+.num {width:5%; text-align:left;user-select: none;}
+.num, #write {display:inline-block;}
+#1 {text-align:left;}
+#2 {text-align:left;}
+#3 {text-align:left;}
+#4 {text-align:left;}
+#5 {text-align:left;}
+#6 {text-align:left;}
+#7 {text-align:left;}
+#8 {text-align:left;}
+#9 {text-align:left;}
